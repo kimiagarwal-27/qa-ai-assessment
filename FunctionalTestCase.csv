@@ -1,0 +1,15 @@
+Test Case ID,Test Scenario,Test Type,Priority,Precondition,Test Steps,Expected Result
+TC_SMK_001,User Registration,Smoke,High,Application is accessible,"Open Registration page -> Enter valid details -> Click Register",User account is created successfully
+TC_SMK_002,User Login,Smoke,High,Registered user exists,"Enter valid email and password -> Click Login",User logs in successfully
+TC_SMK_003,Search Product,Smoke,High,User is on Home page,"Enter product name in search box",Relevant products are displayed
+TC_SMK_004,Add Product to Cart,Smoke,High,User is logged in,"Open product -> Click Add to Cart",Product is added to the cart
+TC_SMK_005,Update Cart Quantity,Smoke,Medium,Product exists in cart,"Increase product quantity",Cart quantity and total are updated
+TC_SMK_006,Checkout with Cash on Delivery,Smoke,High,Product exists in cart,"Proceed to Checkout -> Enter billing details -> Select Cash on Delivery -> Confirm",Order is placed successfully
+TC_SMK_007,Invoice Generation,Smoke,High,Order placed successfully,"Navigate to My Invoices",Invoice is displayed successfully
+TC_REG_001,Login with Invalid Password,Regression,High,Registered user exists,"Enter valid email and invalid password",Proper error message is displayed
+TC_REG_002,Register with Existing Email,Regression,Medium,None,"Register using an already registered email",Validation message is displayed
+TC_REG_003,Search Non-existing Product,Regression,Medium,Home page is open,"Search an unavailable product",No products found message is displayed
+TC_REG_004,Remove Product from Cart,Regression,Medium,Product exists in cart,"Click Remove from Cart",Product is removed successfully
+TC_REG_005,Checkout with Mandatory Fields Blank,Regression,High,Product exists in cart,"Proceed to Checkout without mandatory details",Validation messages are displayed
+TC_REG_006,Verify Invoice Details,Regression,Medium,Invoice generated,"Open generated invoice",Invoice details match the placed order
+TC_REG_007,Logout,Regression,Low,User is logged in,"Click Logout",User is logged out successfully
