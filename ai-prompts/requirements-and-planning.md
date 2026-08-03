@@ -2,6 +2,7 @@
 
 ## Prompt
 
+## Objective
 Analyze Practice Software Testing Toolshop and identify all major user flows and risks from a QA perspective.
 
 ## AI Response Summary
