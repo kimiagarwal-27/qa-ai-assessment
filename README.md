@@ -14,25 +14,38 @@ This project contains UI and API automation tests using Playwright.
 - Cursor AI
 - Chromium Browser
 
-## Test Coverage
+## Test Coverage## Test Coverage
 
 ### UI Tests
 
+The following scenarios are covered:
+
 - User Registration
 - User Login
-- Search Product
+- Invalid Login Validation
+- Product Search
 - Add Product to Cart
-- Checkout
+- Cart Update and Remove Product
+- Checkout with Cash on Delivery
 - Invoice Verification
-- Invalid Login
-- Logout
+- User Logout
 
 
 ### API Tests
 
+The following API scenarios are covered:
+
 - User Login API
 - Cart Creation API
 - Invoice Generation API
+
+
+### Summary
+
+- Smoke tests cover the main user journey.
+- Regression tests cover validation and negative scenarios.
+- UI automation is implemented using Playwright.
+- API testing is implemented using Playwright API requests.
 
 
 ## Project Setup
