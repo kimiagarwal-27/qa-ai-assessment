@@ -27,7 +27,7 @@ test('Checkout with Cash on Delivery', async ({ page }) => {
   await page.waitForTimeout(3000);
 
   // Add to cart
-  await page.locator('[data-test="add-to-cart"]').click();
+  await page.locator('[data-test="add-to-cart"]').click()
   await page.waitForTimeout(3000);
 
   // Open cart
@@ -49,6 +49,7 @@ test('Checkout with Cash on Delivery', async ({ page }) => {
 
   await page.locator('[data-test="city"]').fill('Noida');
   await page.locator('[data-test="state"]').fill('UP');
+  await page.waitForTimeout(3000);
   await page.locator('[data-test="proceed-3"]').click();
 
 
@@ -59,6 +60,7 @@ test('Checkout with Cash on Delivery', async ({ page }) => {
 
   // Confirm order
   await page.locator('[data-test="finish"]').click();
+  await page.waitForTimeout(1000);
 
   // Verify success message appear
   await expect(page.getByText('Payment was successful')).toBeVisible();
