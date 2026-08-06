@@ -23,7 +23,8 @@ test('Checkout with Cash on Delivery', async ({ page }) => {
 
 
   // Open product
-  await page.locator('[data-test="product-name"]').first().click();
+  await page.locator('[data-test="product-name"]').nth(3).click();
+  await page.waitForTimeout(3000);
 
   // Add to cart
   await page.locator('[data-test="add-to-cart"]').click();
@@ -54,7 +55,7 @@ test('Checkout with Cash on Delivery', async ({ page }) => {
   // Select Cash on Delivery
   await page.locator('[data-test="payment-method"]').click
   await page.locator('[data-test="payment-method"]').selectOption('cash-on-delivery');
-  await page.waitForTimeout(3000);
+  await page.waitForTimeout(1000);
 
   // Confirm order
   await page.locator('[data-test="finish"]').click();
