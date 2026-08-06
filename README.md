@@ -14,7 +14,7 @@ This project contains UI and API automation tests using Playwright.
 - Cursor AI
 - Chromium Browser
 
-## Test Coverage## Test Coverage
+## Test Coverage
 
 ### UI Tests
 
