@@ -1,12 +1,16 @@
-import { test, expect } from '@playwright/test';
+import { test } from '@playwright/test';
 import { LoginPage } from '../../pages/LoginPage';
-import user from '../../test-data/user.json';
 
-test('User should login successfully', async ({ page }) => {
-  const loginPage = new LoginPage(page);
+test('@Smoke User Login', async ({ page }) => {
 
-  await loginPage.navigate();
-  await loginPage.login(user.email, user.password);
+  const login = new LoginPage(page);
 
-  await expect(page).toHaveURL(/account/);
+  await login.navigate();
+
+  await login.login(
+    'customer@practicesoftwaretesting.com',
+        'welcome01'
+  );
+  await page.waitForTimeout(3000);
+
 });

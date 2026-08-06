@@ -1,11 +1,13 @@
 # AI Prompts – Requirements and Planning
 
 ## Prompt
+Analyze Practice Software Testing Toolshop application and identify QA risks.
 
 ##   Objective
 Analyze Practice Software Testing Toolshop and identify all major user flows and risks from a QA perspective.
 
 ## AI Response Summary
+Identified risks around registration, login, checkout, payment and invoice generation.
 
 ### Functional Modules
 
