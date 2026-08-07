@@ -16,77 +16,10 @@ Test timeout of 30000ms exceeded.
 ```
 
 ```
-Error: expect(locator).toBeVisible() failed
-
-Locator: getByText('Payment was successful')
-Expected: visible
-Error: element(s) not found
-
+Error: locator.click: Test timeout of 30000ms exceeded.
 Call log:
-  - Expect "toBeVisible" with timeout 5000ms
-  - waiting for getByText('Payment was successful')
-  - Test timeout of 30000ms exceeded.
+  - waiting for locator('[data-test="nav-sign-in"]')
 
-```
-
-```yaml
-- text: View the
-- link "Documentation":
-  - /url: https://testsmith-io.github.io/practice-software-testing/#/
-- text: for this application. Practice Black Box Testing & Bug Hunting
-- button "Testing Guide"
-- button "🐛 Bug Hunting"
-- navigation:
-  - link "Practice Software Testing - Toolshop":
-    - /url: /
-    - img
-  - menubar "Main menu":
-    - menuitem "Home":
-      - link "Home":
-        - /url: /
-    - menuitem "Categories":
-      - button "Categories"
-    - menuitem "Contact":
-      - link "Contact":
-        - /url: /contact
-    - menuitem "Jane Doe":
-      - button "Jane Doe"
-    - menuitem "cart":
-      - link "cart":
-        - /url: /checkout
-        - text: "1"
-  - button "Select language": EN
-- list:
-  - listitem: Cart 1
-  - listitem: Sign in 2
-  - listitem: Billing Address 3
-  - listitem: Payment 4
-- heading "Payment" [level=3]
-- text: Payment Method
-- combobox "Payment Method":
-  - option "Choose your payment method" [disabled]
-  - option "Bank Transfer"
-  - option "Cash on Delivery" [selected]
-  - option "Credit Card"
-  - option "Buy Now Pay Later"
-  - option "Gift Card"
-- button "Confirm"
-- contentinfo:
-  - text: This is a DEMO application (
-  - link "GitHub repo":
-    - /url: https://github.com/testsmith-io/practice-software-testing
-  - text: ), used for software testing training purpose. |
-  - link "Privacy Policy":
-    - /url: /privacy
-  - text: "| Banner photo by"
-  - link "Barn Images":
-    - /url: https://unsplash.com/@barnimages
-  - text: "on"
-  - link "Unsplash":
-    - /url: https://unsplash.com/photos/t5YUoHW6zRo
-  - text: . v2.3 | Built 2026-07-17 | Angular 20.0.5
-- button "Open chat":
-  - img
 ```
 
 # Test source
@@ -100,7 +33,8 @@ Call log:
   6  |   await page.goto('https://practicesoftwaretesting.com/');
   7  | 
   8  |   // Login
-  9  |   await page.locator('[data-test="nav-sign-in"]').click();
+> 9  |   await page.locator('[data-test="nav-sign-in"]').click();
+     |                                                   ^ Error: locator.click: Test timeout of 30000ms exceeded.
   10 |   await page.locator('[data-test="email"]').fill('customer@practicesoftwaretesting.com');
   11 |   await page.locator('[data-test="password"]').fill('welcome01');
   12 | 
@@ -154,10 +88,10 @@ Call log:
   60 | 
   61 |   // Confirm order
   62 |   await page.locator('[data-test="finish"]').click();
-  63 | 
-  64 |   // Verify success message appear
-> 65 |   await expect(page.getByText('Payment was successful')).toBeVisible();
-     |                                                          ^ Error: expect(locator).toBeVisible() failed
-  66 |   
-  67 | });
+  63 |   await page.waitForTimeout(1000);
+  64 | 
+  65 |   // Verify success message appear
+  66 |   await expect(page.getByText('Payment was successful')).toBeVisible();
+  67 |   
+  68 | });
 ```
