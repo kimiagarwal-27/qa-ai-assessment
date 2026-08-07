@@ -1,5 +1,6 @@
 import { test } from '@playwright/test';
-import { LoginPage } from '../../pages/LoginPage';
+import { LoginPage } from '../../pages/loginPage';
+import user from '../../test-data/user.json';
 
 test('@Smoke User Login', async ({ page }) => {
 
@@ -7,10 +8,6 @@ test('@Smoke User Login', async ({ page }) => {
 
   await login.navigate();
 
-  await login.login(
-      'kimi.agarwal@tothenew.com',
-        'Kimicutiepie1989@'
-  );
-  await page.waitForTimeout(3000);
+  await login.login(user.email, user.password);
 
 });

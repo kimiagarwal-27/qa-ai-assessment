@@ -1,5 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../../pages/LoginPage';
+import { LoginPage } from '../../pages/loginPage';
+import user from '../../test-data/user.json';
 
 test('@Regression Logout', async ({ page }) => {
 
@@ -8,10 +9,8 @@ test('@Regression Logout', async ({ page }) => {
 
     await login.navigate();
   
-    await login.login(
-      'kimi.agarwal@tothenew.com',
-          'Kimicutiepie1989@'
-    )
+    await login.login(user.email, user.password);
+
     await page.waitForTimeout(3000);
   // Click My Account
   await page.getByText('Jane Doe').click;
@@ -23,4 +22,4 @@ test('@Regression Logout', async ({ page }) => {
 await page.waitForTimeout(5000);
 
 
-});
+})

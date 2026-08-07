@@ -1,4 +1,6 @@
 import { test, expect } from '@playwright/test';
+import user from '../../test-data/user.json';
+
 
 test('Generate Invoice API', async ({ request }) => {
   // Login
@@ -6,8 +8,8 @@ test('Generate Invoice API', async ({ request }) => {
     'https://api.practicesoftwaretesting.com/users/login',
     {
       data: {
-        email: 'kimi.agarwal@tothenew.com',
-        password: 'Kimicutiepie1989@'
+        email: user.email,
+        password: user.password
       }
     }
   );

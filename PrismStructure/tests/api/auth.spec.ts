@@ -1,12 +1,11 @@
 import { test, expect } from '@playwright/test';
-
+import user from '../../test-data/user.json';
 test('User Login API', async ({ request }) => {
-  const response = await request.post(
-    'https://api.practicesoftwaretesting.com/users/login',
+  const response = await request.post(user.url,
     {
       data: {
-        email: 'kimi.agarwal@tothenew.com',
-        password: 'Kimicutiepie1989@'
+        email: user.email,
+        password: user.password
       }
     }
   );

@@ -1,13 +1,13 @@
 import { test, expect } from '@playwright/test';
-
+import user from '../../test-data/user.json';
 test('Create Cart API', async ({ request }) => {
   // Login and get token
   const loginResponse = await request.post(
     'https://api.practicesoftwaretesting.com/users/login',
     {
       data: {
-        email: 'kimi.agarwal@tothenew.com',
-        password: 'Kimicutiepie1989@'
+        email: user.email,
+        password: user.password
       }
     }
   );

@@ -1,9 +1,11 @@
 import { test, expect } from '@playwright/test';
+import user from '../../test-data/user.json'; // adjust the path if needed
+
 
 test('@Regression Invalid Login', async ({ page }) => {
 
   // Open website
-  await page.goto('https://practicesoftwaretesting.com/');
+  await page.goto(user.url);
 
   // Click Sign In
   await page.getByRole('link', { name: 'Sign in' }).click();
