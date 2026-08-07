@@ -1,46 +1,64 @@
 import { test, expect } from '@playwright/test';
 
+test('Generate Invoice API', async ({ request }) => {
+  // Login
+  const loginResponse = await request.post(
+    'https://api.practicesoftwaretesting.com/users/login',
+    {
+      data: {
+        email: 'kimi.agarwal@tothenew.com',
+        password: 'Kimicutiepie1989@'
+      }
+    }
+  );
 
-test('Generate Invoice API', async ({request})=>{
+  expect(loginResponse.status()).toBe(200);
 
+  const loginBody = await loginResponse.json();
+  const token = loginBody.access_token;
 
-// Login
+  // Create Cart
+  const cartResponse = await request.post(
+    'https://api.practicesoftwaretesting.com/carts',
+    {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }
+  );
 
-const loginResponse = await request.post(
-'https://api.practicesoftwaretesting.com/users/login',
-{
-data:{
-   email: 'customer@practicesoftwaretesting.com',
-        password: 'welcome01'
-}
-});
+  expect(cartResponse.status()).toBe(201);
 
+  const cartBody = await cartResponse.json();
+  const cartId = cartBody.id;
 
-const loginBody = await loginResponse.json();
+  console.log('Cart ID:', cartId);
 
-const token = loginBody.access_token;
+  // Generate Invoice
+  const invoiceResponse = await request.post(
+    `https://api.practicesoftwaretesting.com/invoices`,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`
+      },
+      data: {
+        cart_id: cartId,
+        payment_method: "credit-card", // We'll verify this value next
+        payment_details: {
+          credit_card_number: "4111-1111-1111-1111",
+          expiration_date: "12/2030",
+          cvv: "123",
+          card_holder_name: "kimi"
+        },
+        billing_street: "221 Baker Street",
+        billing_city: "London",
+        billing_country: "United Kingdom"
+      }
+    }
+  );
 
+  console.log('Invoice Status:', invoiceResponse.status());
+  console.log(await invoiceResponse.text());
 
-
-// Create Cart
-
-const cartResponse = await request.post(
-'https://api.practicesoftwaretesting.com/carts',
-{
-headers:{
-Authorization:`Bearer ${token}`
-}
-});
-
-
-const cartBody = await cartResponse.json();
-
-const cartId = cartBody.id;
-
-
-
-console.log("Cart ID:",cartId);
-
-
-
+  expect(invoiceResponse.status()).toBe(201);
 });

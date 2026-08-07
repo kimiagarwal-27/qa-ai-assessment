@@ -9,8 +9,8 @@ test('@Regression Logout', async ({ page }) => {
     await login.navigate();
   
     await login.login(
-      'customer@practicesoftwaretesting.com',
-          'welcome01'
+      'kimi.agarwal@tothenew.com',
+          'Kimicutiepie1989@'
     )
     await page.waitForTimeout(3000);
   // Click My Account

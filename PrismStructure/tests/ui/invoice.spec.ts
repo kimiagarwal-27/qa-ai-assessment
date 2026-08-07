@@ -8,12 +8,12 @@ test('@Regression Verify Invoice', async ({ page }) => {
     await login.navigate();
   
     await login.login(
-      'customer@practicesoftwaretesting.com',
-          'welcome01'
+      'kimi.agarwal@tothenew.com',
+          'Kimicutiepie1989@'
     );
  
   // Open My Account
-  await page.getByRole('button', { name: 'Jane Doe' }).click(); // Replace with your account menu if different
+  await page.getByRole('button', { name: 'kimi agarwal' }).click(); // Replace with your account menu if different
 
   // Open My Invoices
   await page.getByText('My Invoices').click();

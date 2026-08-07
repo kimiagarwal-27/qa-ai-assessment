@@ -1,14 +1,13 @@
 import { test, expect } from '@playwright/test';
 
 test('Create Cart API', async ({ request }) => {
-
   // Login and get token
   const loginResponse = await request.post(
     'https://api.practicesoftwaretesting.com/users/login',
     {
       data: {
-        email: 'customer@practicesoftwaretesting.com',
-        password: 'welcome01'
+        email: 'kimi.agarwal@tothenew.com',
+        password: 'Kimicutiepie1989@'
       }
     }
   );
@@ -16,9 +15,9 @@ test('Create Cart API', async ({ request }) => {
   expect(loginResponse.status()).toBe(200);
 
   const loginBody = await loginResponse.json();
-
   const token = loginBody.access_token;
 
+  console.log('Token:', token);
 
   // Create Cart
   const cartResponse = await request.post(
@@ -30,11 +29,8 @@ test('Create Cart API', async ({ request }) => {
     }
   );
 
-
   expect(cartResponse.status()).toBe(201);
 
   const cartBody = await cartResponse.json();
-
   console.log(cartBody);
-
 });
