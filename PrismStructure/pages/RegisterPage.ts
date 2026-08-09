@@ -56,5 +56,7 @@ export class Register {
         await this.page.locator('[data-test="password"]').fill(password);
 
         await this.page.locator('[data-test="register-submit"]').click();
+        
     }
+
 }
