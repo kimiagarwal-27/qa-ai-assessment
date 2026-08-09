@@ -1,0 +1,22 @@
+[33m7687844[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m updated tracebility-matrix file
+[33mc266756[m Updated gitignore file
+[33m17eac3a[m updated the changes in registration testcase
+[33md783129[m Improve test coverage and add test data documentation
+[33mbcb23d4[m updated readme, project-info file
+[33m42abf2e[m automation docs and test data
+[33m06a39ac[m Update requirements, documents, test design, automation docs and test data
+[33mc72c86b[m Updated all UI & API testcases
+[33m13eb0e4[m Updated the testcases
+[33me7563ac[m Remove Playwright generated files
+[33m29077df[m checked the report
+[33mc3cfca5[m updated the text in readme
+[33m4fd5ca2[m Updated wait command in checkout testcase
+[33m51132f4[m Updated README test coverage section
+[33mc65aa17[m Updated checkout test and finalized automation changes"  Updated checkout test case and execution report
+[33mf854fd8[m Added UI API automation and project documentation
+[33me84e3a9[m Remove unwanted Untitled file
+[33mae2ba4d[m Add README and project information
+[33md63e27c[m :wq git push origin main# Please enter the commit message for your changes. Lines starting
+[33mb24015a[m Complete Playwright QA AI assessment
+[33mcb72e58[m Complete QA AI Assessment
+[33m10207f4[m Completed QA AI Assessment
