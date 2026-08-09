@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../../pages/loginPage';
-import user from '../../test-data/user.json';
+import { LoginPage } from '../../../pages/loginPage';
+import user from '../../../test-data/user.json';
 
 
 test('@Regression Verify Invoice', async ({ page }) => {
@@ -9,7 +9,7 @@ test('@Regression Verify Invoice', async ({ page }) => {
 
     await login.navigate();
   
-    await login.login(user.email, user.password);
+    await login.login('kimi.agarwal@tothenew.com', 'Kimicutiepie1989@');
 
  
   // Open My Account

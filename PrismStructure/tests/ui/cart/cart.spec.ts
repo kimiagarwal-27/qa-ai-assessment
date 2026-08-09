@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import user from '../../test-data/user.json'; // adjust the path if needed
+import user from '../../../test-data/user.json'; // adjust the path if needed
 
 test('Add Product to Cart', async ({ page }) => {
 

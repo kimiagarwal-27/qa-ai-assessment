@@ -1,5 +1,5 @@
 import { test, expect } from '@playwright/test';
-import { Register } from '../../pages/RegisterPage';
+import { Register } from '../../../pages/RegisterPage';
 test('@Smoke User Registration', async ({ page }) => {
 
     const register = new Register(page);

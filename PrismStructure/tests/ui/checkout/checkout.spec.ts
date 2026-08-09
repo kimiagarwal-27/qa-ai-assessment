@@ -1,6 +1,6 @@
 import { test } from '@playwright/test';
-import { LoginPage } from '../../pages/loginPage';
-import user from '../../test-data/user.json';
+import { LoginPage } from '../../../pages/loginPage';
+import user from '../../../test-data/user.json';
 
 
 test.setTimeout(70000);
@@ -14,7 +14,7 @@ test('Checkout with Cash on Delivery', async ({ page }) => {
   await login.navigate();
 
   // Login
-  await login.login(user.email, user.password);
+  await login.login('kimi.agarwal@tothenew.com', 'Kimicutiepie1989@');
 
 
   // Click on Home

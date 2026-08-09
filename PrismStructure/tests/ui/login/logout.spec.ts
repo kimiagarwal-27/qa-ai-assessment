@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { LoginPage } from '../../pages/loginPage';
-import user from '../../test-data/user.json';
+import { LoginPage } from '../../../pages/loginPage';
+import user from '../../../test-data/user.json';
 
 test('@Regression Logout', async ({ page }) => {
 

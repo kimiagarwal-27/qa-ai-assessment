@@ -1,8 +1,8 @@
 import { test, expect } from '@playwright/test';
-import user from '../../test-data/user.json'; // adjust the path if needed
+import user from '../../../test-data/user.json'; // adjust the path if needed
 
 
-test('@Regression Invalid Login', async ({ page }) => {
+test('@Regression Invalid Password', async ({ page }) => {
 
   // Open website
   await page.goto(user.url);
@@ -11,7 +11,7 @@ test('@Regression Invalid Login', async ({ page }) => {
   await page.getByRole('link', { name: 'Sign in' }).click();
 
   // Enter invalid credentials
-  await page.getByPlaceholder('Your email').fill('test@gmail.com');
+  await page.getByPlaceholder('Your email').fill('kimi.agarwal@tothenew.com');
   await page.getByPlaceholder('Your password').fill('WrongPassword');
 
   // Click Login
