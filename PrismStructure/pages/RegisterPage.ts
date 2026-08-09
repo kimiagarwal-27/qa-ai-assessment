@@ -1,11 +1,13 @@
 import { Page } from '@playwright/test';
+import user from '../test-data/user.json';
 
 export class Register {
 
     constructor(private page: Page) {}
 
     async navigate() {
-        await this.page.goto('https://practicesoftwaretesting.com/');
+        await this.page.goto(user.url);
+
     }
 
     async clickRegister() {
@@ -33,8 +35,8 @@ export class Register {
 
         await this.page.locator('[data-test="dob"]').fill(dob);
 
-        await this.page.locator('[data-test="country"]').click;
-        await this.page.locator('input[name="India"]').click;
+        await this.page.locator('[data-test="country"]').click();
+        await this.page.locator('input[name="India"]').click();
         
 
         await this.page.locator('[data-test="postal_code"]').fill(postcode);

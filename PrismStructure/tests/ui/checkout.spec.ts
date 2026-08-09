@@ -69,6 +69,5 @@ test('Checkout with Cash on Delivery', async ({ page }) => {
 
   // Verify success message
   await expect(
-    page.getByText('Payment was successful')
-  ).toBeVisible();
+    page.getByText('Payment was successful')).toBeVisible();
 });

@@ -13,12 +13,12 @@ test('@Regression Logout', async ({ page }) => {
 
     await page.waitForTimeout(3000);
   // Click My Account
-  await page.getByText('Jane Doe').click;
- // await page.locator('[data-test="nav-menu1"]').click;
+  await page.getByText('Jane Doe').click();
+ // await page.locator('[data-test="nav-menu1"]').click();
 
 
   // Click Logout
-  await page.locator('[data-test="nav-sign-out"]').click;
+  await page.locator('[data-test="nav-sign-out"]').click();
 await page.waitForTimeout(5000);
 
 
