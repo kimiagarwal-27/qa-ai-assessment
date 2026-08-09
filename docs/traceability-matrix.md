@@ -38,17 +38,17 @@ The purpose is to ensure that the major application flows are covered by both ma
 
 ## 3. Automation Coverage Summary
 
-| Area | Manual Test Cases | Automated Test Cases | Automation Status |
-|---|---:|---:|---|
-| Registration | 2 | 1 | Partial |
-| Login | 2 | 2 | Covered |
-| Product Search | 2 | 0 | Not Automated |
-| Shopping Cart | 4 | 4 | Covered |
-| Checkout | 3 | 3 | Covered |
-| Invoice | 3 | 3 | Covered |
-| Logout | 1 | 1 | Covered |
-| API | 4 | 2 | Partial |
-| **Total** | **21** | **16** | **Partial Coverage** |
+| Area            | Manual Test Cases | Automated Test Cases | Automation Status |
+|-----------------|------------------:|---------------------:|-------------------|
+| Registration    | 2                 | 1                    | Partial           |
+| Login           | 2                 | 2                    | Covered           |
+| Search Product  | 1                 | 1                    | Automated         |
+| Shopping Cart   | 1                 | 1                    | Covered           |
+| Checkout        | 1                 | 1                    | Covered           |
+| Invoice         | 1                 | 1                    | Covered           |
+| Logout          | 1                 | 1                    | Covered           |
+| API             | 7                 | 7                    | Covered           |
+| **Total**       | **17**            | **15**               | **Partial Coverage** |
 
 > Note: "Automated" means that a corresponding Playwright specification exists. The status should be updated to **Passed** or **Failed** after actual test execution.
 
