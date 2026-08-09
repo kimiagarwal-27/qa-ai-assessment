@@ -22,4 +22,6 @@ test('@Smoke User Registration', async ({ page }) => {
         'Password@123' // password
     ); 
 
+    // Assertion: verify successful registration
+  await expect(page).toHaveURL(/login/);
 });
