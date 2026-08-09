@@ -2,17 +2,26 @@
 
 ## Project Information
 
-Application Under Test:
-https://practicesoftwaretesting.com/
+### Application Under Test
 
-This project contains UI and API automation tests using Playwright.
+[Practice Software Testing Toolshop](https://practicesoftwaretesting.com/)
+
+This project contains UI and API automation tests using Playwright and TypeScript.
+
+---
 
 ## Tools Used
 
 - Playwright
 - TypeScript
+- Node.js
 - Cursor AI
-- Chromium Browser
+- ChatGPT
+- Git
+- GitHub
+- Visual Studio Code
+
+---
 
 ## Test Coverage
 
@@ -30,7 +39,6 @@ The following scenarios are covered:
 - Invoice Verification
 - User Logout
 
-
 ### API Tests
 
 The following API scenarios are covered:
@@ -39,69 +47,55 @@ The following API scenarios are covered:
 - Cart Creation API
 - Invoice Generation API
 
+---
 
-### Summary
+## Automation Framework
 
-- Smoke tests cover the main user journey.
-- Regression tests cover validation and negative scenarios.
+The automation framework uses:
+
+- Playwright with TypeScript
+- Page Object Model for reusable page actions
+- Separate UI and API test suites
+- External test data
+- Playwright HTML reporting
+
+---
+
+## Test Strategy
+
+- Smoke testing covers the main user journey.
+- Regression testing covers validation and negative scenarios.
 - UI automation is implemented using Playwright.
 - API testing is implemented using Playwright API requests.
+- Tests are organized using reusable Page Objects and external test data.
 
+---
 
-## Project Setup
+## Project Structure
 
-Install dependencies:
-
-npm install
-
-
-Install Playwright browsers:
-
-npx playwright install
-
-
-## Run Tests
-
-Run all tests:
-
-npx playwright test --project=chromium
-
-
-Run UI tests:
-
-npx playwright test tests/ui --project=chromium
-
-
-Run API tests:
-
-npx playwright test tests/api --project=chromium
-
-
-Run Smoke tests:
-
-npx playwright test --grep @Smoke --project=chromium
-
-
-Run Regression tests:
-
-npx playwright test --grep @Regression --project=chromium
-
-
-## Test Report
-
-Generate HTML report:
-
-npx playwright show-report
-
-
-## AI Usage
-
-Cursor AI was used for:
-
-- Requirement analysis
-- Test case design
-- Playwright automation support
-- Debugging failures
-- Documentation assistance
-
-All AI-generated suggestions were reviewed before implementation.
+```text
+PrismStructure/
+├── pages/
+│   ├── loginPage.ts
+│   └── RegisterPage.ts
+│
+├── test-data/
+│   └── user.json
+│
+├── tests/
+│   ├── ui/
+│   │   ├── login.spec.ts
+│   │   ├── invalidlogin.spec.ts
+│   │   ├── registration.spec.ts
+│   │   ├── search-product.spec.ts
+│   │   ├── cart.spec.ts
+│   │   ├── checkout.spec.ts
+│   │   ├── invoice.spec.ts
+│   │   └── logout.spec.ts
+│   │
+│   └── api/
+│       ├── auth.spec.ts
+│       ├── cart.spec.ts
+│       └── invoice.spec.ts
+│
+└── playwright.config.ts
