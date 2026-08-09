@@ -1,214 +1,122 @@
-# AI Prompts – Requirements and Planning
+# Requirements Analysis and Test Planning
 
-## Prompt
-Analyze Practice Software Testing Toolshop application and identify QA risks.
+## 1. Objective
 
-##   Objective
-Analyze Practice Software Testing Toolshop and identify all major user flows and risks from a QA perspective.
+The objective of this assessment is to analyze the Practice Software Testing Toolshop application from a QA perspective, identify major user flows and risks, design relevant test scenarios, and automate the selected scenarios using Playwright with TypeScript.
 
-## AI Response Summary
-Identified risks around registration, login, checkout, payment and invoice generation.
+AI was used to assist with understanding the application, identifying important user journeys, defining testing scope, and suggesting potential risks.
 
-### Functional Modules
+---
+
+## 2. Application Overview
+
+Practice Software Testing Toolshop is an e-commerce application where users can browse products, search for products, add products to a shopping cart, authenticate, complete checkout, and view order/invoice information.
+
+The application contains both authenticated and unauthenticated user flows.
+
+---
+
+## 3. Major User Flows
+
+The major user journeys identified are:
 
 1. User Registration
-2. User Login & Logout
-3. Product Listing
+2. User Login
+3. Invalid Login
 4. Product Search
-5. Product Filtering & Sorting
-6. Product Details
-7. Shopping Cart
-8. Checkout
-9. Invoice Generation
-10. User Profile
-11. Order History / My Invoices
+5. Add Product to Cart
+6. Checkout
+7. Invoice Verification
+8. Logout
+9. Cart-related operations
+10. API-based authentication, cart and invoice operations
 
 ---
 
-### Major User Flows
+## 4. Testing Scope
 
-#### Flow 1 – User Registration
+### In Scope
 
-- Navigate to Registration page
-- Enter valid user details
-- Submit registration
-- Verify successful account creation
+- Functional testing
+- UI testing
+- API testing
+- Positive test scenarios
+- Negative test scenarios
+- Authentication testing
+- Product search
+- Cart functionality
+- Checkout functionality
+- Invoice verification
+- Logout
+- Cross-browser testing
+- Basic validation of API responses
 
-#### Flow 2 – Login
+### Out of Scope
 
-- Enter registered email
-- Enter password
-- Login successfully
-- Verify user profile
-
-#### Flow 3 – Browse Products
-
-- Open homepage
-- Browse product categories
-- View products
-
-#### Flow 4 – Search Product
-
-- Search using product name
-- Verify matching products are displayed
-
-#### Flow 5 – Product Details
-
-- Open product page
-- Verify product information
-- Verify price and stock
-
-#### Flow 6 – Shopping Cart
-
-- Add product to cart
-- Update quantity
-- Remove product
-- Verify cart total
-
-#### Flow 7 – Checkout
-
-- Proceed to checkout
-- Enter billing information
-- Select Cash on Delivery
-- Confirm order
-
-#### Flow 8 – Invoice Generation
-
-- Complete checkout
-- Press Confirm (twice if required)
-- Verify invoice creation
-- Verify invoice under "My Invoices"
-
-#### Flow 9 – Logout
-
-- Logout successfully
-- Verify session ends
+- Performance testing
+- Security penetration testing
+- Accessibility audit
+- Load/stress testing
+- Production monitoring
 
 ---
 
-## Business Risks
+## 5. High-Risk Areas
 
-### High Risk
+The following areas were considered higher risk because they directly affect the user's ability to complete a purchase:
 
-- User cannot login
-- Registration fails
-- Checkout fails
-- Invoice not generated
-- Payment flow breaks
-- Incorrect cart calculation
+- Login and authentication
+- Product search
+- Add to cart
+- Cart management
+- Checkout
+- Order/invoice generation
+- API authentication
+- API cart creation
+- API invoice generation
 
-### Medium Risk
-
-- Search returns incorrect products
-- Quantity update incorrect
-- Remove product fails
-- User profile not updated
-- Order history incorrect
-
-### Low Risk
-
-- UI alignment issues
-- Image loading issues
-- Broken hyperlinks
-- Minor validation messages
+Authentication and checkout were considered particularly important because failures can prevent users from completing an order.
 
 ---
 
-## Smoke Test Scenarios
+## 6. Test Strategy
 
-1. Register user
-2. Login
-3. Search product
-4. Add product to cart
-5. Checkout
-6. Generate invoice
-7. Logout
+The test strategy includes:
 
----
-
-## Regression Test Scenarios
-
-1. Invalid registration
-2. Invalid login
-3. Empty search
-4. Filter products
-5. Sort products
-6. View product details
-7. Update cart quantity
-8. Remove product
-9. Empty cart
-10. Checkout validation
-11. Invoice verification
-12. Order history verification
+- Manual analysis of the application
+- Functional test case design
+- UI automation using Playwright
+- API automation using Playwright request fixtures
+- Page Object Model for reusable UI actions
+- Externalized test data
+- Cross-browser execution
+- Playwright HTML reporting
 
 ---
 
-## Edge Cases
+## 7. Automation Strategy
 
-- Invalid email format
-- Weak password
-- Duplicate registration
-- Empty login fields
-- Search with special characters
-- Search with no results
-- Large product quantity
-- Remove all products from cart
-- Refresh browser during checkout
-- Browser back during payment
-- Network interruption during checkout
-- Invoice generation after page refresh
+Playwright with TypeScript was selected for automation because it supports:
+
+- Chromium, Firefox and WebKit
+- UI and API testing
+- Automatic waiting
+- Built-in assertions
+- Trace and reporting capabilities
+- TypeScript support
+
+The automation framework follows a modular structure with separate Page Objects, test data, UI tests and API tests.
 
 ---
 
-## Test Data Requirements
+## 8. AI Assistance
 
-### Valid Users
+AI was used during requirements analysis to:
 
-- New customer
-- Existing customer
+- Identify important user journeys
+- Suggest potential testing risks
+- Help define the testing scope
+- Suggest an automation strategy
+- Identify areas that should receive higher testing priority
 
-### Invalid Users
-
-- Invalid email
-- Wrong password
-- Blank credentials
-
-### Products
-
-- Single product
-- Multiple products
-- Different categories
-
-### Checkout
-
-- Valid billing details
-- Invalid billing details
-- Missing mandatory fields
-
-### Payment
-
-- Cash on Delivery
-
----
-
-## Risks to Validate During Testing
-
-- Session management
-- Authentication
-- Cart calculation
-- Invoice generation
-- Data persistence
-- API response validation
-- Error handling
-- Input validation
-- UI responsiveness
-- Cross-browser compatibility
-
----
-
-## Validation Notes
-
-- Manually explored the application.
-- Verified the main user journey:
-  Registration → Login → Product Search → Add to Cart → Checkout → Invoice → Logout.
-- Identified the key smoke and regression scenarios for automation.
+The final scope and test scenarios were reviewed against the application before implementation.
