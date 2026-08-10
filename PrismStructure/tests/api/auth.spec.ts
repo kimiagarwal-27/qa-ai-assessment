@@ -1,12 +1,14 @@
 import { test, expect } from '@playwright/test';
 import user from '../../test-data/user.json';
+import { env } from '../../config/env';
+
 test('User Login API', async ({ request }) => {
   const response = await request.post(user.url,
     {
-      data: {
-        email: user.email,
-        password: user.password
-      }
+        data: {
+          email: env.testEmail,
+          password: env.testPassword,
+        },
     }
   );
 

@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 import user from '../../test-data/user.json';
+import { env } from '../../config/env';
+
 
 
 test('Generate Invoice API', async ({ request }) => {
@@ -7,10 +9,10 @@ test('Generate Invoice API', async ({ request }) => {
   const loginResponse = await request.post(
     'https://api.practicesoftwaretesting.com/users/login',
     {
-      data: {
-        email: user.email,
-        password: user.password
-      }
+    data: {
+      email: env.testEmail,
+      password: env.testPassword,
+    },
     }
   );
 

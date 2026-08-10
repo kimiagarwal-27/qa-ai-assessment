@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../../../pages/loginPage';
 import user from '../../../test-data/user.json';
+import { env } from '../../../config/env';
+
 
 
 test('@Regression Verify Invoice', async ({ page }) => {
@@ -8,9 +10,11 @@ test('@Regression Verify Invoice', async ({ page }) => {
     const login = new LoginPage(page);
 
     await login.navigate();
-  
-    await login.login('kimi.agarwal@tothenew.com', 'Kimicutiepie1989@');
-
+  //login
+    await login.login(
+      env.testEmail,
+      env.testPassword
+    );
  
   // Open My Account
   await page.getByRole('button', { name: 'kimi agarwal' }).click(); // Replace with your account menu if different

@@ -1,14 +1,17 @@
 import { test, expect } from '@playwright/test';
 import user from '../../test-data/user.json';
+import { env } from '../../config/env';
+
 test('Create Cart API', async ({ request }) => {
   // Login and get token
   const loginResponse = await request.post(
     'https://api.practicesoftwaretesting.com/users/login',
     {
-      data: {
-        email: user.email,
-        password: user.password
-      }
+      
+        data: {
+          email: env.testEmail,
+          password: env.testPassword,
+        },
     }
   );
 

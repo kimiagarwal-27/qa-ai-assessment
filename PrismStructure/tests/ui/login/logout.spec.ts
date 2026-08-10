@@ -1,6 +1,8 @@
 import { test, expect } from '@playwright/test';
 import { LoginPage } from '../../../pages/loginPage';
 import user from '../../../test-data/user.json';
+import { env } from '../../../config/env';
+
 
 test('@Regression Logout', async ({ page }) => {
 
@@ -9,8 +11,11 @@ test('@Regression Logout', async ({ page }) => {
 
     await login.navigate();
   
-    await login.login(user.email, user.password);
-
+//login
+    await login.login(
+      env.testEmail,
+      env.testPassword
+    );
     await page.waitForTimeout(3000);
   // Click My Account
   await page.getByText('Jane Doe').click();

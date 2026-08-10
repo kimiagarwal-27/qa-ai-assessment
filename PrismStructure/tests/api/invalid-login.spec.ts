@@ -1,5 +1,7 @@
 import { test, expect } from '@playwright/test';
 import user from '../../test-data/user.json';
+import { env } from '../../config/env';
+
 
 test.describe('Invalid Login API Tests', () => {
 
@@ -7,11 +9,10 @@ test.describe('Invalid Login API Tests', () => {
 
     const response = await request.post(
       'https://api.practicesoftwaretesting.com/users/login',
-      {
-        data: {
-          email: user.email,
-          password: 'WrongPassword123!'
-        }
+      { data: {
+        email: env.testEmail,
+        password: "jkjds",
+      }, 
       }
     );
 
